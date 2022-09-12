@@ -1,0 +1,2 @@
+# hyprlanlite
+new configs
