@@ -1,0 +1,22 @@
+#!/bin/sh
+convertsecs(){
+((m=(${1}%3600)/60))
+((s=${1}%60))
+printf "%02d:%02d\n" $m $s
+}
+
+TESTI=$(bc -l <<<$(playerctl --player spotify metadata | awk '/length/{print $3}' | rev | cut -c7- | rev)/100*$2)
+POSITION=$(playerctl --player spotify position | cut -f1 -d".")
+LENGTH=$(playerctl --player spotify metadata | awk '/length/{print $3}' | rev | cut -c7- | rev)
+# Exec
+if [[ "$1" == "--position" ]]; then
+  echo $(convertsecs $POSITION)/$(convertsecs $LENGTH)
+elif [[ "$1" == "--length" ]]; then
+  echo $(convertsecs $LENGTH)
+elif [[ "$1" == "--pposition" ]]; then
+  echo $((100*$POSITION/$LENGTH))
+elif [[ "$1" == "--move" ]]; then
+  playerctl --player spotify position $TESTI
+  echo $TESTI
+fi
+

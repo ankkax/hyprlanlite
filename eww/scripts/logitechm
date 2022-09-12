@@ -1,0 +1,3 @@
+#!/bin/sh
+
+solaar show | sed -n -e 's/^.*Battery: //p' | grep -E -o "[0-9]+"

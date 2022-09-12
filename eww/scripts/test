@@ -1,0 +1,2 @@
+#!/bin/sh
+echo hello >> /home/miika/.config/systemd/user/test

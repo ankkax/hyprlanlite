@@ -1,0 +1,93 @@
+(include "sidebar.yuck")
+(defvar eww "$HOME/.eww/eww -c $HOME/.config/eww")
+(deflisten workspace "scripts/hyprworkspace")
+(defvar net_rev false)
+(defvar time_rev false)
+
+(defwindow bar
+  :stacking "fg"
+  :monitor "0"
+  :exclusive "true"
+  ; :windowtype "dock"
+  ; :reserve (struts :distance "40px" :side "bottom")
+  :geometry (geometry :x "0px"
+                      :y "-10px"
+                      :width "100%"
+                      :height "60px"
+                      :anchor "bottom center")
+  (bar))
+
+    (defwidget bar[]
+      (box 
+      (bar-shadow)))
+
+  (defwidget bar-shadow []
+      (box :class "bar-shadow"
+      (launcher)
+      (workspaces)
+      (time)))
+
+    ; launcher widget
+    (defwidget launcher []
+      (box :halign "start" :valign "end" :class "launcher"
+      (button  :onclick "rofi -show drun &" "")))
+
+    ; workspace widget  
+    (defwidget workspaces []
+      (literal :valign "end" :halign "center" :content workspace))
+
+    ;; Clock Widgets ;;
+    (defwidget time []
+  (eventbox :onhover "${eww} update time_rev=true"
+			  :onhoverlost "${eww} update time_rev=false"
+      (box	:orientation "h" :class "time" :halign "end" :space-evenly false
+          (label :text time)
+          (revealer :transition "slideleft"
+          :reveal time_rev
+          :duration "350ms"
+      (button	:onclick "eww open --toggle calendar"	DATE)))))
+    (defpoll time	:interval "1s"	"date '+%H:%M %p'")
+    (defpoll DATE :interval "6h" "date '+%m/%e/%y'")
+
+
+      (defwindow calendar
+        :geometry (geometry :x "0px" 
+                  :y "0px" 
+                              :anchor "bottom right"
+                  :width "270px" 
+                  :height "0px")
+                  :monitor "0"
+      (calshadow))
+
+      (defwidget calshadow []
+        (box 
+        (cal)
+        ))
+
+      (defwidget cal []
+        (box :class "cal" :orientation "v"
+        (box :class "cal-in" 
+        (calendar :class "cal" 
+              :day calendar_day 
+              :year calendar_year
+              :show-details: true))))
+      (defpoll calendar_day :interval "20h" "date '+%d'")
+      (defpoll calendar_year :interval "20h" "date '+%Y'")
+
+          (defwindow notif
+            :stacking "fg"
+            :monitor "0"
+            ; :exclusive "true"
+            ; :windowtype "dock"
+            ; :reserve (struts :distance "40px" :side "top")
+            :geometry (geometry :x "0px"
+                                :y "0px"
+                                :width "5px"
+                                :height "100%"
+                                :anchor "top right")
+            (notif))
+          
+              (defwidget notif[]
+                (eventbox :onhover "~/.local/bin/./rofi_notif_center.sh &")
+              )
+          
