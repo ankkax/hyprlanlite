@@ -1,6 +1,6 @@
 (defwindow sidebar
     :geometry (geometry :x "0px"
-                        :y "3px"
+                        :y "0px"
                         :width "5px"
                         :height "1384px"
                         :anchor "bottom left")
@@ -10,7 +10,7 @@
 
 (defwidget sidebar [] 
 	(eventbox :halign "start" :onhover "eww update side=true" :onhoverlost "eww update side=false"
-		(revealer :transition "slideright" :reveal side :duration "550ms"
+		(revealer :transition "slideright" :reveal side :duration "350ms"
 		(side))))
 (defvar side false)
 
@@ -73,9 +73,23 @@
             :min 0 
             :active "true" 
             :max 100 
-            :value percentage)
+            :value percentage)        
+  )
 
-  ))))
+(box :class "spotvol_bar" 
+      :space-evenly "false" 
+      :valign "center"
+      :halign "center"
+					(scale  
+            :onchange "~/.config/eww/scripts/setspotifyvolume volume {}%"
+            :min 0 
+            :active "true" 
+            :max 100 
+            :value getspotvolume)        
+  
+))))
+
+(defpoll getspotvolume :interval "1s" "~/.config/eww/scripts/getspotifyvolume")
 (defpoll percentage :interval "1s" "~/.config/eww/scripts/spotmusictime --pposition")
 (defpoll length :interval "1s" "~/.config/eww/scripts/spotmusictime --lenght")
 (defpoll position :interval "1s" "~/.config/eww/scripts/spotmusictime --position")
@@ -136,7 +150,7 @@
     (defpoll volume 	:interval "1s"  "~/.config/eww/scripts/sbvol --get")
     (defpoll icon	:interval "1s"  "~/.config/eww/scripts/sbvol --icon")    
     (defpoll gpu 	:interval "1s"  "~/.config/eww/scripts/gpu")
-    (defpoll mouse :interval "5s" "~/.config/eww/scripts/logitechm")
+    (defpoll mouse :interval "15m" "~/.config/eww/scripts/logitechm")
 
 (defwidget tray []
 	(box :class "buttons" :orientation "h" :space-evenly "false" :halign "center"  :valign "end" :spacing "2"
