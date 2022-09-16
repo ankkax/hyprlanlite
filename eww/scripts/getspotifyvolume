@@ -1,0 +1,5 @@
+#!/bin/sh
+
+VOLUME=$(pactl list sink-inputs |grep -B18 Spotify |awk '/Volume/ {print $5}' |sed 's/%//')
+       echo $VOLUME
+
