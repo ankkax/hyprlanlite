@@ -1,0 +1,347 @@
+*{
+	all: unset;
+}
+
+//Global Styles
+.bar {
+  color: #c0caf5;
+  border-radius: 16px;
+}
+
+.bar-shadow{
+  background-color: #16161e;
+  box-shadow: 0px 0px 7px rgb(0, 0, 0, .9);
+  margin: 10px;
+  border-radius: 16px;
+}
+
+.sidebar {
+  color: #c0caf5;
+  border-radius: 16px;
+}
+
+.side{
+  background-color: #16161e;
+  box-shadow: 0px 0px 7px rgb(0, 0, 0, .9);
+  margin: 10px;
+  border-radius: 16px;
+  padding: 0px 30px 0px 30px;
+}
+
+.bottom{
+  background-color: #16161e;
+  box-shadow: 0px 0px 7px rgb(0, 0, 0, .9);
+  margin: 10px;
+  border-radius: 16px;
+  padding: 0px 30px 0px 30px;
+}
+/** tooltip!! **/
+tooltip.background {
+    background-color: #16161e;
+    font-size: 18;
+    border-radius: 16px;
+    color: #c0caf5;
+}
+
+tooltip label {
+    margin: 6px;
+    font-weight: bold;
+    font-size: 14;
+    font-family: Furamono Nerd Font;
+}
+
+.cavabar {
+  color: #45ADA8;
+  font-family: "Hack Nerd Font";
+}
+
+.works {
+  font-size: 27px;
+  font-weight: normal;
+  margin: 0px 0px 1px 20px;
+  font-family: JetBrainsMono Nerd Font Mono;
+  }
+
+.launcher {
+  margin: 0px 0px 11px 20px;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: Furamono Nerd Font;
+}
+
+// Clock
+.time {
+  margin: 5px 20px 9px 0px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Furamono Nerd Font;
+}
+
+// Calendar
+
+.calshadow {
+  color: #c0caf5;
+  border-radius: 16px;
+}
+
+.cal {
+  background-color: #16161e;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 10px;
+  border-radius: 16px;
+  box-shadow: 0px 0px 7px rgb(0, 0, 0, .9);
+.cal-in {
+    padding: 10px 10px 0px 10px;
+    color: #c0caf5;
+    
+
+.cal {
+     &.highlight {
+      all: unset;
+          padding: 20px;
+      }
+
+      padding: 5px 5px 5px 5px;
+      margin-left: 10px;
+    }
+  }
+}
+
+calender {
+    color: #414868;
+
+}
+calendar:selected {
+  color: #7aa2f7;
+}
+
+calendar.header {
+color: #c0caf5;
+font-weight: bold;
+}
+
+calendar.button {
+color: #c0caf5;
+}
+
+calendar.highlight {
+color: #c0caf5;
+font-weight: bold;
+}
+
+calendar:indeterminate {
+color: #414868;
+}
+
+// Music
+
+.music_bar scale trough highlight {
+	all: unset;
+    background-image: linear-gradient(to right, #afcee0 30%, #a1bdce 50%, #77a5bf 100% *50);
+	border-radius: 24px;
+}
+.music_bar scale trough {
+	all: unset;
+	background-color: #232232;
+    box-shadow: 0 6px 5px 2px #06060b;
+	border-radius: 22px;
+	min-height: 13px;
+	min-width: 140px;
+	margin : 0px 10px 20px 0px;
+}
+.music-player {
+	all: unset;
+	background-color: #1a1b26;
+	padding: 0px 25px 0px 17px;
+	border-radius: 12px;
+  box-shadow: 0px 0px 6px 6px rgb(0, 0, 0, .4);}
+.album_art {
+	background-size: cover;
+	background-position: center;
+	border-radius: 12px;
+	margin: 1rem 1rem 1.5rem 1rem;
+	padding: 4rem;
+}
+
+.artist {
+font-family: JetBrainsMono Nerd Font Mono;
+	font-weight: bold;
+	color: #c0caf5;
+	font-size : 1.2em;
+}
+.spacer{
+  color: #1a1b26;
+
+  font-size: 0.5em;
+}
+.song{
+	font-family: JetBrainsMono Nerd Font;
+	font-style: italic;
+	font-size: 1.1em;
+	color: #c0caf5;
+	margin-top: -5px;
+}
+.btn_prev, .btn_play, .btn_next {
+  font-family: JetBrainsMono Nerd Font Mono;
+  color: #c0caf5;
+  font-size: 25px;
+	margin: 0rem 0rem 0rem 1rem;
+}
+
+.metric-player  scale trough highlight {
+	all: unset;
+	border-radius: 10px;
+	background-color: #c0caf5;
+}
+
+// weather
+.weather {
+  all: unset;
+  background-color: #1a1b26;
+  border-radius: 12px;
+  padding: 23px 37px 20px 37px;
+  box-shadow: 0px 0px 6px 6px rgb(0, 0, 0, .4);}
+
+.iconweather {
+  font-family: JetBrainsMono Nerd Font;
+	font-size : 44px;
+	font-weight : normal;
+	margin : 0px -5px  0px 20px;
+}
+
+.label_temp {
+	color : #c0caf5;
+	font-size : 35px;
+	font-weight : bold;
+	margin : 0px 0px 0px 0px;
+  font-family: Furamono Nerd Font;
+
+}
+
+.label_stat {
+	color : #c0caf5;
+	font-size : 38px;
+	font-weight : bold;
+}
+
+.label_quote {
+	color : #c0caf5;
+	font-size : 18px;
+  padding-bottom: 10px;
+	font-weight : normal;
+}
+
+.date {
+  all: unset;
+  background-color: #1a1b26;
+  padding: 33px 27px 27px 27px;
+  border-radius: 12px;
+  color: #c0caf5;
+	font-size : 18px;
+	font-style : italic;
+	font-family: Cartograph CF;
+  box-shadow: 0px 0px 6px 6px rgb(0, 0, 0, .4);}
+
+.stats-box {
+  all: unset;
+  background-color: #1a1b26;
+  padding: 20px 25px 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 6px 6px rgb(0, 0, 0, .4);}
+
+.stats-icon {
+  font-size: 23px;
+  color: #c0caf5;
+  font-family: JetBrainsMono Nerd Font Mono;
+}
+
+.scale trough {
+  all: unset;
+  background-color: #131319;
+  min-height: 12px;
+  border-radius: 15px;
+  margin-left: 10px;
+}
+
+.scale highlight {
+  background-color: #c0caf5;
+  border-radius: 15px;
+}
+
+.foo {
+  font-size: 40px;
+  padding-top: 10px;
+}
+
+.buttons {
+  opacity: 1;
+  background-color: #1a1b26;
+  border-radius: 12px;
+  padding: 15px 0px 15px 0px;
+  font-family: JetBrainsMono Nerd Font Mono;
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 6px 6px rgb(0, 0, 0, .4);}
+
+.poweroff, .reboot, .firmware, .exit, .restart {
+  margin: 0px 16px 0px 16px;
+  padding: 2px 11px 2px 11px;
+  border-radius: 25px;
+  font-size: 24px;
+  color: #16161e;
+}
+
+.poweroff {
+  background-color: #f7768e;
+}
+.reboot {
+  background-color: #73daca;
+}
+.firmware {
+  background-color: #e0af68;
+}
+.exit {
+  background-color: #bb9af7;
+}
+.restart {
+  background-color: #7aa2f7;
+}
+
+.fetch {
+  margin-top: 35px;
+  font-size: 15px;
+  border-radius: 12px;
+  background-color: #1a1b26;
+  padding: 30px 85px 30px 85px;
+  box-shadow: 0px 0px 6px 6px rgb(0, 0, 0, .4);}
+
+.wm {
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  color: #bb9af7;
+}
+
+.host {
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  color: #f7768e;
+}
+
+.uptime {
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  color: #e0af68;
+}
+
+.packages {
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  color: #7aa2f7;
+}
+
+.kernal {
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  color: #73daca;
+}
